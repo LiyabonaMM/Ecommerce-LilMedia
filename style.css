@@ -1,3 +1,8 @@
+
+/* CSS for larger screens */
+.header {
+    padding: 30px 0;
+=======
 /* Reset CSS */
 * {
     margin: 0;
@@ -12,16 +17,28 @@
   /* Header */
   .header {
     background-color: #f5f5f5;
+
   }
   
   .container {
     max-width: 1170px;
     margin: 0 auto;
+
+    padding: 0 15px;
+=======
     padding: 20px;
+
   }
   
   .navbar {
     display: flex;
+ products
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 50px;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
@@ -29,10 +46,27 @@
   
   .logo img {
     height: 40px;
+    main
   }
   
   .navbar-nav {
     display: flex;
+ products
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin-right: 20px;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+
     list-style: none;
   }
   
@@ -62,11 +96,91 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+
   }
   
   .col-lg-6 {
     flex: 0 0 50%;
     max-width: 50%;
+
+    padding: 0 15px;
+  }
+  
+  .col-md-6,
+  .col-sm-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .categories {
+    padding: 50px 0;
+  }
+  
+  .small-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .row .col-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+  }
+  
+  .testimonial {
+    padding: 50px 0;
+  }
+  
+  .brands {
+    padding: 50px 0;
+  }
+  
+  /* CSS for smaller screens */
+  @media screen and (max-width: 767px) {
+    .logo {
+      margin-right: 0;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-nav {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .navbar-collapse {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
   }
   
   h1 {
