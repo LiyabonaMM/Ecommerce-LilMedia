@@ -1,0 +1,170 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-left: 10px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .cart-icon,
+  .menu-icon {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    height: 30px;
+  }
+  
+  /* Main Section */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  /* Categories */
+  .categories {
+    margin-top: 50px;
+  }
+  
+  .categories img {
+    width: 100%;
+  }
+  
+  /* Featured Products */
+  .title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .col-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+  
+  .col-4 img {
+    width: 100%;
+  }
+  
+  .rating {
+    color: #ff9800;
+    margin-bottom: 10px;
+  }
+  
+  .col-4 h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .col-4 p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Testimonial */
+  .testimonial {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .testimonial p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .rating {
+    margin-bottom: 10px;
+  }
+  
+  .testimonial img {
+    width: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial h3 {
+    font-size: 16px;
+  }
+  
+  /* Brands */
+  .brands {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .brands img {
+    width: 100%;
+    max-width: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
