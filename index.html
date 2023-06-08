@@ -19,34 +19,57 @@
   <body>
     <div class="header">
       <div class="container">
-        <div class="navbar">
+        <div class="navbar navbar-expand-lg navbar-light">
           <div class="logo">
             <a href="index.html"
               ><img src="./images/Lil_Media-removebg-preview.png" width="125px"
             /></a>
           </div>
-          <nav>
-            <ul id="MenuItems">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="">About</a></li>
-              <li><a href="">Contact</a></li>
-              <li><a href="account.html">Account</a></li>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="account.html">Account</a>
+              </li>
             </ul>
-          </nav>
+          </div>
           <a href="cart.html"
             ><img src="images/cart.png" width="30px" height="30px"
           /></a>
           <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
         </div>
         <div class="row">
-          <div class="col-2">
+          <div class="col-lg-6 col-md-6 col-sm-12">
             <h1>WELCOME TO LILMEDIA <br />FEED YOUR AESTHETIC!</h1>
             <p>Pushing P</p>
-            <a href="products.html" class="btn">Explore Now &#8594;</a>
+            <a href="products.html" class="btn btn-primary"
+              >Explore Now &#8594;</a
+            >
           </div>
-          <div class="col-2">
-            <img src="images/image1.png" />
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src="images/image1.png" class="img-fluid" />
           </div>
         </div>
       </div>
