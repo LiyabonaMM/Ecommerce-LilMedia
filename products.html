@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LilMedia</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -10,18 +10,27 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <!--<div class ="header">-->
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+          <a href="index.html"
+            ><img
+              src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
+              width="125px"
+          /></a>
         </div>
         <nav>
           <ul id="MenuItems">
@@ -29,7 +38,6 @@
             <li><a href="products.html">Products</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
-            <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
         <a href="cart.html"
@@ -38,203 +46,28 @@
         <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
       </div>
     </div>
-    <!--</div>-->
 
-    <!------------------------------ Products------------------------------>
     <div class="small-container">
       <div class="row row-2">
         <h2>All Products</h2>
-        <select>
+        <select id="sortingSelect" onchange="sortProducts()">
           <option>Default sorting</option>
-          <option>Short by price</option>
-          <option>Short by popularity</option>
-          <option>Short by rating</option>
-          <option>Short by sale</option>
+          <option>Sort by price</option>
+          <option>Sort by popularity</option>
+          <option>Sort by rating</option>
+          <option>Sort by sale</option>
         </select>
       </div>
 
-      <!--<h2 class="title" >Featured Products</h2>-->
-      <div class="row">
-        <div class="col-4">
-          <a href="products-details.html"
-            ><img src="images/product-11.jpg"
-          /></a>
-          <a href="products-details.html"><h4>Downshifter Sports Shoes</h4></a>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-2.jpg" /></a>
-          <h4>Lace-Up Running Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-          <p>$35.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-3.jpg" /></a>
-          <h4>Lace Fastening Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$15.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"
-            ><img src="images/product-10.jpg"
-          /></a>
-          <h4>Flat Lace-Fastening Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$48.00</p>
-        </div>
-      </div>
-
-      <!-------------- new row----------------->
-
-      <div class="row">
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-5.jpg" /></a>
-          <h4>Flat Heel gray hoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-3.jpg" /></a>
-          <h4>Lace-Fastening black Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-          <p>$21.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-7.jpg" /></a>
-          <h4>HRX Men's cotton socks</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$09.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-2.jpg" /></a>
-          <h4>Lace-Up Running Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$35.00</p>
-        </div>
-      </div>
-      <!--new row for the latest product-->
-      <div class="row">
-        <div class="col-4">
-          <a href="products-details.html"><img src="images/product-7.jpg" /></a>
-          <h4>HRX cotton socks</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$10.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"
-            ><img src="images/product-10.jpg"
-          /></a>
-          <h4>Flat Lace-Fastening Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-          <p>$48.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"
-            ><img src="images/product-11.jpg"
-          /></a>
-          <h4>Loafers Men (Gray)</h4>
-          <div class="rating">
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$15.00</p>
-        </div>
-        <div class="col-4">
-          <a href="products-details.html"
-            ><img src="images/product-12.jpg"
-          /></a>
-          <h4>Lace-Fastening white Shoes</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$21.00</p>
-        </div>
-      </div>
-
-      <div class="page-btn">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>&#8594;</span>
-      </div>
+      <div class="row" id="productRow"></div>
     </div>
 
-    <!----------------------------------footer------------------------------------->
     <div class="footer">
       <div class="container">
         <div class="row">
           <div class="footer-col-1">
             <h3>Download Our App</h3>
-            <p>Download App for Android and ios mobile phone.</p>
+            <p>Download App for Android and iOS mobile phone.</p>
             <div class="app-logo">
               <img src="images/play-store.png" alt="" />
               <img src="images/app-store.png" alt="" />
@@ -266,25 +99,164 @@
             </ul>
           </div>
         </div>
-
         <hr />
-        <!--horizontal line-->
-        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+        <p class="copyright">&copy; 2021 - Apurba Kr. Pramanik</p>
       </div>
     </div>
 
-    <!-----------------------------------js for toggle menu----------------------------------------------->
     <script>
-      var menuItems = document.getElementById("MenuItems");
+      // Array containing product data
+      var products = [
+        {
+          image:
+            "https://i.postimg.cc/020VDJnF/5a1e5d72423d4c1e4021e987f26cf4f7.jpg",
+          name: "Nike Dunk Low VI",
+          price: "R1000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/yYTDF0GM/d8dc11a0e8a9797de1537ad404b712f8.jpg",
+          name: "Lace-Up Cactus TRXVSS",
+          price: "R2000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/7LQ5cDMw/afdabda8f35bf5ec67cffd64256c6556.jpg",
+          name: "New Balance 530",
+          price: "R15000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/4xNTjc3R/5e3ddba494c7fc7853d9cac96037705f.jpg",
+          name: "Rare Kanye X Bape",
+          price: "R250000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/xC4rmjDJ/8ce66171d6c2f557e01b12deb9d0102d.jpg",
+          name: "Batman",
+          price: "R2000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/PfW9hMNv/4a71a2ff209c1e5b47f2acd0125baa2a.jpg",
+          name: "LV Nike",
+          price: "R250000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/15zHT0FQ/456403c28bec8faccee5bef41cd27c8e.jpg",
+          name: "Black Crocs",
+          price: "R1000",
+        },
+        {
+          image:
+            "https://i.postimg.cc/sxH08TDM/df008b4cd48b9f7d48bff0d039f5ba45.jpg",
+          name: "Old Skool Vans - Lil Wayne Giveaway",
+          price: "R3000",
+        },
+      ];
 
-      MenuItems.style.maxHeight = "0px";
-      function menutoggle() {
-        if (MenuItems.style.maxHeight == "0px") {
-          MenuItems.style.maxHeight = "200px";
-        } else {
-          MenuItems.style.maxHeight = "0px";
-        }
+      // Function to create product elements dynamically
+      function createProductElement(product) {
+        var productDiv = document.createElement("div");
+        productDiv.className = "col-4";
+
+        var productImage = document.createElement("img");
+        productImage.src = product.image;
+
+        var productName = document.createElement("h4");
+        productName.textContent = product.name;
+
+        var productPrice = document.createElement("p");
+        productPrice.textContent = product.price;
+
+        var addToCartButton = document.createElement("button");
+        addToCartButton.textContent = "Add to Cart";
+        addToCartButton.className = "btn btn-primary";
+
+        addToCartButton.addEventListener("click", function () {
+          addToCart(product);
+        });
+
+        productDiv.appendChild(productImage);
+        productDiv.appendChild(productName);
+        productDiv.appendChild(productPrice);
+        productDiv.appendChild(addToCartButton);
+
+        return productDiv;
       }
+
+      // Function to add products to the product row
+      function addProductsToRow() {
+        var productRow = document.getElementById("productRow");
+
+        products.forEach(function (product) {
+          var productElement = createProductElement(product);
+          productRow.appendChild(productElement);
+        });
+      }
+
+      // Function to add a product to the cart
+      function addToCart(product) {
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // Function to sort products based on the selected option
+      function sortProducts() {
+        var sortingSelect = document.getElementById("sortingSelect");
+        var selectedIndex = sortingSelect.selectedIndex;
+
+        switch (selectedIndex) {
+          case 1:
+            products.sort(function (a, b) {
+              return (
+                parseInt(a.price.substring(1)) - parseInt(b.price.substring(1))
+              );
+            });
+            break;
+          case 2:
+            products.sort(function (a, b) {
+              return a.name.localeCompare(b.name);
+            });
+            break;
+          case 3:
+            // Add sorting logic based on popularity
+            break;
+          case 4:
+            // Add sorting logic based on rating
+            break;
+          case 5:
+            // Add sorting logic based on sale
+            break;
+        }
+
+        var productRow = document.getElementById("productRow");
+        productRow.innerHTML = "";
+        addProductsToRow();
+      }
+
+      // Call the function to add products
+      addProductsToRow();
     </script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7bNt5/0z9RG3R6BfHD+k9Oo9U8n6BTVI0f5+1Jw29aX7N7n1f"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0Cp+5Xl5Un4WklvBtG2pOTCmKpFqXFnKb0hIv/wx+5Jvq2C4VK6W2E+0f/4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUzFV5IP1pie8lzo4v+X/EW5g4j7xPTsTvN7bXqbvHYFF"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
