@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
-    <title>All Products - Redstore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products LilMedia</title>
     <link rel="stylesheet" href="products-details.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -19,12 +19,11 @@
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <a href="index.html">
-            <img
+          <a href="index.html"
+            ><img
               src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
               width="125px"
-            />
-          </a>
+          /></a>
         </div>
         <nav>
           <ul id="MenuItems">
@@ -34,9 +33,9 @@
             <li><a href="">Contact</a></li>
           </ul>
         </nav>
-        <a href="cart.html">
-          <img src="images/cart.png" width="30px" height="30px" />
-        </a>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
         <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
       </div>
     </div>
@@ -45,8 +44,7 @@
       <div class="row">
         <div class="col-2">
           <img
-            src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg
-            "
+            src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg"
             width="100%"
             id="productImg"
           />
@@ -54,8 +52,7 @@
           <div class="small-img-row">
             <div class="small-img-col">
               <img
-                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg
-                "
+                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg"
                 width="100%"
                 class="small-img"
               />
@@ -69,16 +66,14 @@
             </div>
             <div class="small-img-col">
               <img
-                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg
-                "
+                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg"
                 width="100%"
                 class="small-img"
               />
             </div>
             <div class="small-img-col">
               <img
-                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg
-                "
+                src="https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg"
                 width="100%"
                 class="small-img"
               />
@@ -89,7 +84,7 @@
           <p>SHOE</p>
           <h1>Adidas XY</h1>
           <h4>R3000</h4>
-          <select>
+          <select id="sizeSelect">
             <option>Select Size</option>
             <option>XXL</option>
             <option>XL</option>
@@ -97,12 +92,12 @@
             <option>Medium</option>
             <option>Small</option>
           </select>
-          <input type="number" value="1" min="1" max="10" />
-          <a href="#" class="btn">Add to Cart</a>
+          <input type="number" value="1" min="1" max="10" id="quantityInput" />
+          <a href="#" class="btn" onclick="addToCart()">Add to Cart</a>
 
           <h3>Product Details <i class="fa fa-indent"></i></h3>
           <br />
-          <p>XY From the headquarters</p>
+          <p>Adidas HeardQuarters ++</p>
         </div>
       </div>
     </div>
@@ -116,6 +111,37 @@
         } else {
           menuItems.style.maxHeight = "0px";
         }
+      }
+
+      // Function to handle the "Add to Cart" action
+      function addToCart() {
+        // Retrieve the selected size and quantity
+        var size = document.getElementById("sizeSelect").value;
+        var quantity = parseInt(document.getElementById("quantityInput").value);
+
+        // Perform some validation if needed
+
+        // Add the item to the cart
+        var item = {
+          name: "Adidas XY",
+          price: "R3000",
+          size: size,
+          quantity: quantity,
+          image:
+            "https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg",
+        };
+
+        // Retrieve existing cart items from local storage
+        var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Add the new item to the cart
+        cartItems.push(item);
+
+        // Store the updated cart items in local storage
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+        // Redirect the user to the cart page
+        window.location.href = "cart.html";
       }
     </script>
   </body>
