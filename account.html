@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>LilMedia</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!--<div class ="header">-->
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
+              width="125px"
+          /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="account.html">Admin</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
+        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+      </div>
+    </div>
+    <!--</div>-->
+
+    <!------------------------------ account-page details------------------------------>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Login form submit event
+        $("#loginForm").submit(function (event) {
+          event.preventDefault(); // Prevent form from submitting
+
+          // Get the values entered by the user
+          var email = $("#email").val();
+          var password = $("#password").val();
+
+          // Replace the following email and password with your desired values
+          var desiredEmail = "mxhalisalm@gmail.com";
+          var desiredPassword = "mxhalisalm";
+
+          // Perform a check using the exact values
+          if (email === desiredEmail && password === desiredPassword) {
+            // Redirect to the admin page if login is successful
+            window.location.href = "admin.html";
+          } else {
+            // Show an error message if login is unsuccessful
+            alert("Invalid email or password. Please try again.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
