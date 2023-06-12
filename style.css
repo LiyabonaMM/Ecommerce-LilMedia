@@ -630,3 +630,58 @@ form a{
     font-size: 18px;
   }
   
+  /* Contact CSS */
+
+  .contact-section {
+    padding: 80px 0;
+  }
+
+  .contact-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .contact-form textarea {
+    height: 120px;
+  }
+
+  .contact-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background-color: #555;
+  }
