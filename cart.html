@@ -15,6 +15,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
+
   <body>
     <div class="container">
       <div class="navbar">
@@ -66,6 +67,18 @@
     </div>
 
     <script>
+      //toggle menu
+      var menuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
       // Function to remove a product from the cart
       function removeFromCart(index) {
         var cart = JSON.parse(localStorage.getItem("cart")) || [];
