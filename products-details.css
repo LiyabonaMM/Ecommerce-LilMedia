@@ -6,28 +6,28 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-/*nav maenu on the left as a unordered list*/
+
 .navbar{
     display:flex;
     align-items: center;
     padding:20px;
 }
-/*nav maenu on the right as a unordered list*/
+
 nav{
     flex: 1;
     text-align: right;
 }
-/*nav maenu on the right as a list but without bullet*/
+
 nav ul{
     display: inline-block;
     list-style-type: none;   
 }
-/*nav maenu on the right as a vertically list with 50px gapping with each with underline*/
+
 nav ul li{
     display: inline-block;
     margin-right: 50px;   
 }
-/*nav maenu on the right as a vertically list with 50px gapping with each without underline*/
+
 a{
     text-decoration: none;
     color: #555;
@@ -65,7 +65,7 @@ p{
 
 .btn{
     display: inline-block;
-    background: #ff523b;
+    background: black;
     color: #fff;
     padding:8px 30px;
     margin: 30px 0px;
@@ -120,7 +120,7 @@ p{
 }
 .title::after{
     content: '';
-    background: #ff523b;
+    background: black;
     width: 80px;
     height: 5px;
     border-radius: 5px;
@@ -137,75 +137,12 @@ h4{
     font-size: 14px;
 }
 .rating .fa{
-    color: #ff523b;
+    color: black;
 }
 .col-4:hover{
     transform:translateY(-5px);
 }
 
-/*-----------------------offer -----------------------*/
-.offer{
-    background: radial-gradient(#fff, #ffd6d6);
-    margin-top: 80px;
-    padding: 30px 0;
-}
-
-.col-2 .offer-img{
-    padding: 50px;
-}
-small{
-    color:#555;
-}
-
-/*-----------------------Testimonial -----------------------*/
-.testimonial{
-    padding-top: 100px;
-}
-.testimonial .col-3{
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.5s;
-}
-.testimonial .col-3 img{
-    width:50px;
-    margin-top: 20px;
-    border-radius: 50%;/*square images converted to round shape box*/
-}
-.testimonial .col-3:hover{
-    transform: translateY(-10px);
-}
-.fa.fa-quote-left{
-    font-size: 34px;
-    color: #ff523b;
-}
-.col-3 p{
-    font-size: 12px;
-    margin: 12px 0;
-    color: #777;
-}
-.testimonial .col-3 h3{
-    font-weight: 600;
-    color: #555;
-    font-size: 16px;
-}
-
-/*-----------------------Brands -----------------------*/
-.brands{
-    margin: 100px auto;
-}
-.col-5{
-    width: 100px;
-}
-.col-5 img{
-    width: 100%;
-    cursor: pointer;
-    filter: grayscale(100%);
-}
-.col-5 img:hover{
-    filter: grayscale(0);
-}
 
 /*-----------------------Footer -----------------------*/
 .footer{
@@ -328,7 +265,7 @@ ul{
     margin:100px auto 50px;
 }
 select{
-    border:1px solid #ff523b;
+    border:1px solid black;
     padding: 5px;
 }
 select:focus{
@@ -340,7 +277,7 @@ select:focus{
 }
 .page-btn span{
     display: inline-block;
-    border:1px solid #ff523b;
+    border:1px solid black;
     margin-left: 10px;
     width: 40px;
     height: 40px;
@@ -349,7 +286,7 @@ select:focus{
     cursor: pointer;
 }
 .page-btn span:hover{
-    background: #ff523b;
+    background: black;
     color: #fff;
 }
 
@@ -381,13 +318,13 @@ select:focus{
     padding-left: 10px;
     font-size: 20px;
     margin-right: 10px;
-    border: apx solid #ff523b;
+    border: apx solid black;
 }
 input:focus{
     outline: none;
 }
 .single-product .fa{
-    color:#ff523b;
+    color:black;
     margin-left: 10px;
 }
 .small-img-row{
@@ -420,7 +357,7 @@ th{
     text-align: left;
     padding: 5px;
     color: #fff;
-    background: #ff523b;
+    background: black;
     font-weight: normal;
 }
 td{
@@ -433,7 +370,7 @@ td input{
     padding: 5px;
 }
 td a{
-    color: #ff523b;
+    color: black;
 }
 td img{
     width: 80px;
@@ -445,7 +382,7 @@ td img{
     justify-content: flex-end;
 }
 .total-price table{
-    border-top: 3px solid #ff523b;
+    border-top: 3px solid black;
     width: 100%;
     max-width: 400px;
 }
@@ -525,7 +462,7 @@ form a{
 #Indicator{
     width: 100px;
     border: none;
-    background: #ff523b;
+    background: black;
     height: 3px;
     margin-top: 8px;
     transform: translateX(100px);
