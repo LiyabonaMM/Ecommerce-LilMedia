@@ -124,5 +124,3 @@ function loadProductsFromLocalStorage() {
     renderProductList();
   }
 }
-
-loadProductsFromLocalStorage();
