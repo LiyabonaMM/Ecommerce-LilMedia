@@ -36,9 +36,16 @@
           </ul>
         </nav>
         <a href="cart.html"
-          ><img src="images/cart.png" width="30px" height="30px"
+          ><img
+            src="https://i.postimg.cc/XqqkZBPJ/cart.png"
+            width="30px"
+            height="30px"
         /></a>
-        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+        <img
+          src="https://i.postimg.cc/bYKjzxWs/menu.png"
+          class="menu-icon"
+          onClick="menutoggle()"
+        />
       </div>
     </div>
 
@@ -83,7 +90,7 @@
     <script>
       // js for toggle menu
 
-      var menuItems = document.getElementById("MenuItems");
+      let menuItems = document.getElementById("MenuItems");
 
       MenuItems.style.maxHeight = "0px";
 
@@ -103,12 +110,12 @@
           event.preventDefault(); // Prevent form from submitting
 
           // Get the values entered by the user
-          var email = $("#email").val();
-          var password = $("#password").val();
+          let email = $("#email").val();
+          let password = $("#password").val();
 
           // Replace the following email and password with your desired values
-          var desiredEmail = "mxhalisalm@gmail.com";
-          var desiredPassword = "mxhalisalm";
+          let desiredEmail = "mxhalisalm@gmail.com";
+          let desiredPassword = "mxhalisalm";
 
           // Perform a check using the exact values
           if (email === desiredEmail && password === desiredPassword) {

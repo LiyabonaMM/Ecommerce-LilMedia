@@ -30,89 +30,69 @@
                         <li><a href="account.html">Admin</a></li>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" /></a>
-                <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+                <a href="cart.html"><img src="https://i.postimg.cc/XqqkZBPJ/cart.png" width="30px" height="30px" /></a>
+                <img src="https://i.postimg.cc/bYKjzxWs/menu.png" class="menu-icon" onClick="menutoggle()" />
             </div>
             <section class="contact-section">
                 <div class="container">
-                    <h2>Contact Us</h2>
-                    <div class="contact-form">
-                        <form action="https://formspree.io/f/xrgvnzyl" method="POST">
-                            <div class="form-group">
-                                <label for="email">Your email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your message:</label>
-                                <textarea class="form-control" id="message" name="message" rows="8" required></textarea>
-                            </div>
-                            <!-- Add other form fields here if needed -->
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </form>
-                    </div>
+                  <h2>Contact Us</h2>
+                  <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xrgvnzyl" method="POST">
+                      <div class="form-group">
+                        <label for="email">Your email:</label>
+                        <input type="email" class="form-control" id="email" name="email" />
+                        <small id="emailError" class="error-message"></small>
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Your message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="8"></textarea>
+                        <small id="messageError" class="error-message"></small>
+                      </div>
+                      <!-- Add other form fields here if needed -->
+                      <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                  </div>
                 </div>
-            </section>
-
-
-            <!----------------------------------footer------------------------------------->
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-col-1">
-                            <h3>Download Our App</h3>
-                            <p>Download App for Android and ios mobile phone.</p>
-                            <div class="app-logo">
-                                <img src="images/play-store.png" alt="" />
-                                <img src="images/app-store.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="footer-col-2">
-                            <img src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png" />
-                            <p>
-                                Our Purpose Is To Sustainably Make the Pleasure and Benefits of
-                                Sports Accessible to the Many.
-                            </p>
-                        </div>
-                        <div class="footer-col-3">
-                            <h3>Useful Links</h3>
-                            <ul>
-                                <li>Coupons</li>
-                                <li>Blog Post</li>
-                                <li>Return Policy</li>
-                                <li>Join Affiliate</li>
-                            </ul>
-                        </div>
-                        <div class="footer-col-4">
-                            <h3>Follow us</h3>
-                            <ul>
-                                <li>Facebook</li>
-                                <li>Twitter</li>
-                                <li>Instagram</li>
-                                <li>Youtube</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <hr />
-                    <!--horizontal line-->
-                    <p class="copyright">Copyright 2023 Liyabona Mxhalisa</p>
-                </div>
-            </div>
-
-            <!-----------------------------------js for toggle menu----------------------------------------------->
-            <script>
-                var menuItems = document.getElementById("MenuItems");
-
-                MenuItems.style.maxHeight = "0px";
-
-                function menutoggle() {
-                    if (MenuItems.style.maxHeight == "0px") {
-                        MenuItems.style.maxHeight = "200px";
-                    } else {
-                        MenuItems.style.maxHeight = "0px";
-                    }
-                }
-            </script>
+              </section>
+            
+              <div class="footer">
+                <!-- Footer content here -->
+              </div>
+            
+              <script>
+                // Form validation
+                const contactForm = document.getElementById('contactForm');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+                const emailError = document.getElementById('emailError');
+                const messageError = document.getElementById('messageError');
+            
+                contactForm.addEventListener('submit', (e) => {
+                  let isValid = true;
+            
+                  // Reset error messages
+                  emailError.textContent = '';
+                  messageError.textContent = '';
+            
+                  // Email validation
+                  const emailValue = emailInput.value.trim();
+                  if (!emailValue) {
+                    emailError.textContent = 'Please enter an email address';
+                    isValid = false;
+                  }
+            
+                  // Message validation
+                  const messageValue = messageInput.value.trim();
+                  if (!messageValue) {
+                    messageError.textContent = 'Please enter a message';
+                    isValid = false;
+                  }
+            
+                  if (!isValid) {
+                    e.preventDefault(); // Prevent form submission if there are errors
+                  }
+                });
+              </script>
 </body>
 
 </html>

@@ -30,8 +30,8 @@
             <li><a href="account.html">Admin</a></li>
           </ul>
         </nav>
-        <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" /></a>
-        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+        <a href="cart.html"><img src="https://i.postimg.cc/XqqkZBPJ/cart.png" width="30px" height="30px" /></a>
+        <img src="https://i.postimg.cc/bYKjzxWs/menu.png" class="menu-icon" onClick="menutoggle()" />
       </div>
 
       <body>
@@ -42,8 +42,7 @@
               <option>Default sorting</option>
               <option>Sort by price</option>
               <option>Sort by popularity</option>
-              <option>Sort by rating</option>
-              <option>Sort by sale</option>
+          
             </select>
           </div>
 
@@ -95,7 +94,7 @@
         <script>
 
           //toggle menu
-          var menuItems = document.getElementById("MenuItems");
+          let menuItems = document.getElementById("MenuItems");
 
 MenuItems.style.maxHeight = "0px";
 
@@ -107,7 +106,7 @@ function menutoggle() {
   }
 }
           // Array containing product data
-          var products = [{
+          let products = [{
               image: "https://i.postimg.cc/020VDJnF/5a1e5d72423d4c1e4021e987f26cf4f7.jpg",
               name: "Nike Dunk Low VI",
               price: "R1000",
@@ -150,89 +149,94 @@ function menutoggle() {
           ];
 
           // Function to create product elements dynamically
-          function createProductElement(product) {
-            var productDiv = document.createElement("div");
-            productDiv.className = "col-4";
+function createProductElement(product) {
+  let productDiv = document.createElement("div");
+  productDiv.className = "col-4";
 
-            var productImage = document.createElement("img");
-            productImage.src = product.image;
+  let productImage = document.createElement("img");
+  productImage.src = product.image;
 
-            var productName = document.createElement("h4");
-            productName.textContent = product.name;
+  let productName = document.createElement("h4");
+  productName.textContent = product.name;
 
-            var productPrice = document.createElement("p");
-            productPrice.textContent = product.price;
+  let productPrice = document.createElement("p");
+  productPrice.textContent = product.price;
+  
+  let addToCartButton = document.createElement("button");
+  addToCartButton.textContent = "Add to Cart";
+  addToCartButton.className = "btn btn-primary";
 
-            var addToCartButton = document.createElement("button");
-            addToCartButton.textContent = "Add to Cart";
-            addToCartButton.className = "btn btn-primary";
+  addToCartButton.addEventListener("click", function () {
+    addToCart(product);
+  });
 
-            addToCartButton.addEventListener("click", function () {
-              addToCart(product);
-            });
+  productDiv.appendChild(productImage);
+  productDiv.appendChild(productName);
+  productDiv.appendChild(productPrice);
+  productDiv.appendChild(addToCartButton);
 
-            productDiv.appendChild(productImage);
-            productDiv.appendChild(productName);
-            productDiv.appendChild(productPrice);
-            productDiv.appendChild(addToCartButton);
+  return productDiv;
+}
 
-            return productDiv;
-          }
+// Function to add products to the product row
+function addProductsToRow() {
+  let productRow = document.getElementById("productRow");
 
-          // Function to add products to the product row
-          function addProductsToRow() {
-            var productRow = document.getElementById("productRow");
+  products.forEach(function (product) {
+    let productElement = createProductElement(product);
+    productRow.appendChild(productElement);
+  });
+}
 
-            products.forEach(function (product) {
-              var productElement = createProductElement(product);
-              productRow.appendChild(productElement);
-            });
-          }
+// Function to add a product to the cart
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-          // Function to add a product to the cart
-          function addToCart(product) {
-            var cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push(product);
-            localStorage.setItem("cart", JSON.stringify(cart));
-          }
+  // Check if the product already exists in the cart
+  let existingProduct = cart.find((item) => item.name === product.name);
 
-          // Function to sort products based on the selected option
-          function sortProducts() {
-            var sortingSelect = document.getElementById("sortingSelect");
-            var selectedIndex = sortingSelect.selectedIndex;
+  if (existingProduct) {
+    // Increase the quantity and update the total price
+    existingProduct.quantity++;
+    existingProduct.totalPrice = existingProduct.price * existingProduct.quantity;
+  } else {
+    // Add the product to the cart
+    product.quantity = 1;
+    product.totalPrice = product.price;
+    cart.push(product);
+  }
 
-            switch (selectedIndex) {
-              case 1:
-                products.sort(function (a, b) {
-                  return (
-                    parseInt(a.price.substring(1)) - parseInt(b.price.substring(1))
-                  );
-                });
-                break;
-              case 2:
-                products.sort(function (a, b) {
-                  return a.name.localeCompare(b.name);
-                });
-                break;
-              case 3:
-                // Add sorting logic based on popularity
-                break;
-              case 4:
-                // Add sorting logic based on rating
-                break;
-              case 5:
-                // Add sorting logic based on sale
-                break;
-            }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-            var productRow = document.getElementById("productRow");
-            productRow.innerHTML = "";
-            addProductsToRow();
-          }
+// Function to sort products based on the selected option
+function sortProducts() {
+  let sortingSelect = document.getElementById("sortingSelect");
+  let selectedIndex = sortingSelect.selectedIndex;
 
-          // Call the function to add products
-          addProductsToRow();
-          
+  switch (selectedIndex) {
+    case 1:
+      products.sort(function (a, b) {
+        return (
+          parseInt(a.price.substring(1)) - parseInt(b.price.substring(1))
+        );
+      });
+      break;
+    case 2:
+      products.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+      break;
+  }
+
+  let productRow = document.getElementById("productRow");
+  productRow.innerHTML = "";
+  addProductsToRow();
+}
+
+// Call the function to add products
+addProductsToRow();
+
         </script>
 
         <!-- Bootstrap JS -->
@@ -248,3 +252,4 @@ function menutoggle() {
       </body>
 
 </html>
+

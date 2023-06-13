@@ -36,9 +36,16 @@
           </ul>
         </nav>
         <a href="cart.html"
-          ><img src="images/cart.png" width="30px" height="30px"
+          ><img
+            src="https://i.postimg.cc/XqqkZBPJ/cart.png"
+            width="30px"
+            height="30px"
         /></a>
-        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+        <img
+          src="https://i.postimg.cc/bYKjzxWs/menu.png"
+          class="menu-icon"
+          onClick="menutoggle()"
+        />
       </div>
     </div>
 
@@ -107,7 +114,7 @@
     <script>
       // Function to toggle the menu
       function menutoggle() {
-        var menuItems = document.getElementById("MenuItems");
+        let menuItems = document.getElementById("MenuItems");
         if (menuItems.style.maxHeight == "0px") {
           menuItems.style.maxHeight = "200px";
         } else {
@@ -118,13 +125,13 @@
       // Function to handle the "Add to Cart" action
       function addToCart() {
         // Retrieve the selected size and quantity
-        var size = document.getElementById("sizeSelect").value;
-        var quantity = parseInt(document.getElementById("quantityInput").value);
+        let size = document.getElementById("sizeSelect").value;
+        let quantity = parseInt(document.getElementById("quantityInput").value);
 
         // Perform some validation if needed
 
         // Add the item to the cart
-        var item = {
+        let item = {
           name: "New Balance 530",
           price: "R1500",
           size: size,
@@ -133,7 +140,7 @@
         };
 
         // Retrieve existing cart items from local storage
-        var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
         // Add the new item to the cart
         cartItems.push(item);
