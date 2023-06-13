@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LilMedia - Admin Interface</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All Products LilMedia</title>
+        <link rel="stylesheet" href="products-details.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="navbar">
+            <div class="logo">
+              <a href="index.html"
+                ><img
+                  src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
+                  width="125px"
+              /></a>
+            </div>
+            <nav>
+              <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">Admin</a></li>
+              </ul>
+            </nav>
+            <a href="cart.html"
+              ><img src="images/cart.png" width="30px" height="30px"
+            /></a>
+            <img
+              src="images/menu.png"
+              class="menu-icon"
+              onClick="menutoggle()"
+            />
+          </div>
+        </div>
+
+        <section class="admin-section">
+          <div class="container">
+            <h1>Admin Interface - Product Management</h1>
+            <div class="product-list" id="productList"></div>
+            <div class="clearfix"></div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="addProductBtn"
+              data-toggle="modal"
+              data-target="#addProductModal"
+            >
+              Add New Product
+            </button>
+            <button type="button" class="btn btn-secondary" id="sortByNameBtn">
+              Sort by Name
+            </button>
+            <button type="button" class="btn btn-secondary" id="sortByPriceBtn">
+              Sort by Price
+            </button>
+          </div>
+        </section>
+
+        <!-- Add Product Modal -->
+        <div
+          class="modal fade"
+          id="addProductModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="addProductModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">
+                  Add New Product
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="productName">Product Name:</label>
+                  <input type="text" class="form-control" id="productName" />
+                </div>
+                <div class="form-group">
+                  <label for="productDesc">Product Description:</label>
+                  <textarea
+                    class="form-control"
+                    id="productDesc"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="productPrice">Product Price:</label>
+                  <input type="number" class="form-control" id="productPrice" />
+                </div>
+                <div class="form-group">
+                  <label for="productImageUrl">Image URL:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="productImageUrl"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="saveProductBtn"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+          // js for toggle menu
+
+                var menuItems = document.getElementById("MenuItems");
+
+                MenuItems.style.maxHeight = "0px";
+
+                function menutoggle() {
+                  if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px";
+                  } else {
+                    MenuItems.style.maxHeight = "0px";
+                  }
+                }
+                //end
+        </script>
+        <script>
+                   const productList = document.getElementById('productList');
+          const addProductBtn = document.getElementById('addProductBtn');
+          const saveProductBtn = document.getElementById('saveProductBtn');
+          const sortByNameBtn = document.getElementById('sortByNameBtn');
+          const sortByPriceBtn = document.getElementById('sortByPriceBtn');
+
+          let products = [];
+
+          addProductBtn.addEventListener('click', () => {
+            clearProductForm();
+          });
+
+          saveProductBtn.addEventListener('click', () => {
+            saveProduct();
+          });
+
+          sortByNameBtn.addEventListener('click', () => {
+            sortProductsByName();
+          });
+
+          sortByPriceBtn.addEventListener('click', () => {
+            sortProductsByPrice();
+          });
+
+          function clearProductForm() {
+            document.getElementById('productName').value = '';
+            document.getElementById('productDesc').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productImageUrl').value = '';
+          }
+
+          function saveProduct() {
+            const productName = document.getElementById('productName').value;
+            const productDesc = document.getElementById('productDesc').value;
+            const productPrice = document.getElementById('productPrice').value;
+            const productImageUrl = document.getElementById('productImageUrl').value;
+
+            const product = {
+              name: productName,
+              description: productDesc,
+              price: parseFloat(productPrice),
+              imageUrl: productImageUrl,
+            };
+
+            products.push(product);
+            saveProductsToLocalStorage();
+            renderProductList();
+            clearProductForm();
+            $('#addProductModal').modal('hide');
+          }
+
+          function deleteProduct(index) {
+            products.splice(index, 1);
+            saveProductsToLocalStorage();
+            renderProductList();
+          }
+
+          function renderProductList() {
+            productList.innerHTML = '';
+
+            products.sort((a, b) => a.name.localeCompare(b.name));
+
+            for (let i = 0; i < products.length; i++) {
+              const product = products[i];
+
+              const card = document.createElement('div');
+              card.classList.add('card');
+
+              const image = document.createElement('img');
+              image.classList.add('card-img-top');
+              image.src = product.imageUrl;
+              image.alt = product.name;
+
+              const cardBody = document.createElement('div');
+              cardBody.classList.add('card-body');
+
+              const title = document.createElement('h5');
+              title.classList.add('card-title');
+              title.textContent = product.name;
+
+              const price = document.createElement('p');
+              price.classList.add('card-text');
+              price.textContent = 'Price: $' + product.price.toFixed(2);
+
+              const description = document.createElement('p');
+              description.classList.add('card-text');
+              description.textContent = product.description;
+
+              const deleteBtn = document.createElement('button');
+              deleteBtn.classList.add('btn', 'btn-danger');
+              deleteBtn.textContent = 'Delete';
+              deleteBtn.addEventListener('click', () => deleteProduct(i));
+
+              cardBody.appendChild(title);
+              cardBody.appendChild(price);
+              cardBody.appendChild(description);
+              cardBody.appendChild(deleteBtn);
+
+              card.appendChild(image);
+              card.appendChild(cardBody);
+
+              productList.appendChild(card);
+            }
+          }
+
+          function sortProductsByName() {
+            products.sort((a, b) => a.name.localeCompare(b.name));
+            renderProductList();
+          }
+
+          function sortProductsByPrice() {
+            products.sort((a, b) => a.price - b.price);
+            renderProductList();
+          }
+
+          function saveProductsToLocalStorage() {
+            localStorage.setItem('products', JSON.stringify(products));
+          }
+
+          function loadProductsFromLocalStorage() {
+            const storedProducts = localStorage.getItem('products');
+            if (storedProducts) {
+              products = JSON.parse(storedProducts);
+              renderProductList();
+            }
+          }
+
+          loadProductsFromLocalStorage();
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

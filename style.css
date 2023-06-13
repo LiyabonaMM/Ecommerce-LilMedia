@@ -695,3 +695,109 @@ form a{
     background-color: #555;
   }
   
+  /* Admin CSS */
+
+
+  .admin-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .admin-heading {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  #productList .card {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-brand img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .modal-body .form-group label {
+    font-weight: bold;
+  }
+  
+  .modal-footer {
+    justify-content: center;
+  }
+  
+
+  .card {
+    width: 18rem;
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .btn-primary {
+    background-color: black;
+    border-color: black;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .btn-primary:hover {
+    background-color: brown;
+    border-color: brown;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      flex-basis: calc(100% - 20px);
+    }
+  }
+  
