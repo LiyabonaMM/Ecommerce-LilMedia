@@ -1,93 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
-    <title>LilMedia</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <a href="index.html"
-            ><img
-              src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
-              width="125px"
-          /></a>
-        </div>
-        <nav>
-          <ul id="MenuItems">
-              <li><a href="/html/index.html">Home</a></li>
-              <li><a href="/html/products.html">Products</a></li>
-              <li><a href="/html/about.html">About</a></li>
-              <li><a href="/html/contact.html">Contact</a></li>
-              <li><a href="/html/account.html">Admin</a></li>
-          </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+  <title>LilMedia</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
+            width="125px" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="/html/index.html">Home</a></li>
+          <li><a href="/html/products.html">Products</a></li>
+          <li><a href="/html/about.html">About</a></li>
+          <li><a href="/html/contact.html">Contact</a></li>
+          <li><a href="/html/account.html">Admin</a></li>
+        </ul>
       </nav>
-        </nav>
-        <a href="/html/cart.html"
-          ><img
-            src="https://i.postimg.cc/XqqkZBPJ/cart.png"
-            width="30px"
-            height="30px"
-        /></a>
-        <img
-          src="https://i.postimg.cc/bYKjzxWs/menu.png"
-          class="menu-icon"
-          onClick="menutoggle()"
-        />
-      </div>
+      </nav>
+      <a href="/html/cart.html"><img src="https://i.postimg.cc/XqqkZBPJ/cart.png" width="30px" height="30px" /></a>
+      <img src="https://i.postimg.cc/bYKjzxWs/menu.png" class="menu-icon" onClick="menutoggle()" />
     </div>
+  </div>
 
-    <!------------------------------ account-page details------------------------------>
+  <!------------------------------ account-page details------------------------------>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="login-form">
-            <h2>Login</h2>
-            <form id="loginForm">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Enter email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Enter password"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn btn-primary">Log In</button>
-            </form>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="login-form">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Log In</button>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+  <script src="/script/togglemenu.js"></script>
+  <script src="/script/account.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7bNt5/0z9RG3R6BfHD+k9Oo9U8n6BTVI0f5+1Jw29aX7N7n1f" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0Cp+5Xl5Un4WklvBtG2pOTCmKpFqXFnKb0hIv/wx+5Jvq2C4VK6W2E+0f/4" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUzFV5IP1pie8lzo4v+X/EW5g4j7xPTsTvN7bXqbvHYFF" crossorigin="anonymous">
+  </script>
+</body>
 
-    <!-- Bootstrap JS -->
-    <script src="/script/account.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </body>
 </html>

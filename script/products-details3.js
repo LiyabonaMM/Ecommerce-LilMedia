@@ -2,14 +2,14 @@
 function menutoggle() {
     let menuItems = document.getElementById("MenuItems");
     if (menuItems.style.maxHeight == "0px") {
-      menuItems.style.maxHeight = "200px";
+        menuItems.style.maxHeight = "200px";
     } else {
-      menuItems.style.maxHeight = "0px";
+        menuItems.style.maxHeight = "0px";
     }
-  }
+}
 
-  // Function to handle the "Add to Cart" action
-  function addToCart() {
+// Function to handle the "Add to Cart" action
+function addToCart() {
     // Retrieve the selected size and quantity
     let size = document.getElementById("sizeSelect").value;
     let quantity = parseInt(document.getElementById("quantityInput").value);
@@ -18,11 +18,11 @@ function menutoggle() {
 
     // Add the item to the cart
     let item = {
-      name: "Adidas XY",
-      price: "R3000",
-      size: size,
-      quantity: quantity,
-      image: "https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg",
+        name: "Adidas XY",
+        price: "R3000",
+        size: size,
+        quantity: quantity,
+        image: "https://i.postimg.cc/RZFbmLx9/0ffdfd20e661b0ecb659a2e8c800825c.jpg",
     };
 
     // Retrieve existing cart items from local storage
@@ -36,4 +36,4 @@ function menutoggle() {
 
     // Redirect the user to the cart page
     window.location.href = "cart.html";
-  }
+}
