@@ -1,104 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LilMedia</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-      <div class="container">
-        <div class="navbar">
-          <div class="logo">
-            <a href="index.html"
-              ><img
-                src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png"
-                width="125px"
-            /></a>
-          </div>
-          <nav>
-            <ul id="MenuItems">
-              <li><a href="/html/index.html">Home</a></li>
-              <li><a href="/html/products.html">Products</a></li>
-              <li><a href="/html/about.html">About</a></li>
-              <li><a href="/html/contact.html">Contact</a></li>
-              <li><a href="/html/account.html">Admin</a></li>
-            </ul>
-          </nav>
-          <a href="/html/cart.html" id="cartLink">
-            <img
-              src="https://i.postimg.cc/XqqkZBPJ/cart.png"
-              width="30px"
-              height="30px"
-            />
-            <span class="cart-notification" id="cartNotification"></span>
-          </a>
-          <img
-            src="https://i.postimg.cc/bYKjzxWs/menu.png"
-            class="menu-icon"
-            onClick="menutoggle()"
-          />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LilMedia</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="https://i.postimg.cc/bvDfNTP1/Lil-Media-removebg-preview.png" width="125px"
+              class="lazyload" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="/html/index.html">Home</a></li>
+            <li><a href="/html/products.html">Products</a></li>
+            <li><a href="/html/about.html">About</a></li>
+            <li><a href="/html/contact.html">Contact</a></li>
+            <li><a href="/html/account.html">Admin</a></li>
+          </ul>
+        </nav>
+        <a href="/html/cart.html" id="cartLink">
+          <img src="https://i.postimg.cc/XqqkZBPJ/cart.png" width="30px" height="30px" class="lazyload" />
+          <span class="cart-notification" id="cartNotification"></span>
+        </a>
+        <img src="https://i.postimg.cc/bYKjzxWs/menu.png" class="menu-icon" onClick="menutoggle()" class="lazyload" />
+      </div>
+
+      <div class="small-container">
+        <div class="row row-2">
+          <h2>All Products</h2>
+          <select id="sortingSelect" onchange="sortProducts()">
+            <option>Default sorting</option>
+            <option>Sort by price</option>
+            <option>Sort by popularity</option>
+          </select>
         </div>
 
-        <div class="small-container">
-          <div class="row row-2">
-            <h2>All Products</h2>
-            <select id="sortingSelect" onchange="sortProducts()">
-              <option>Default sorting</option>
-              <option>Sort by price</option>
-              <option>Sort by popularity</option>
-            </select>
-          </div>
-
-          <div class="row" id="productRow"></div>
-        </div>
-      </div>
-    </div>
-
-     <!--FOOTER-->
- <div class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col-1">
-        <h3>Download Our App</h3>
-        <p>Download App for Android and iOS mobile phones.</p>
-        <div class="app-logo">
-          <a href="https://play.google.com/store/apps/details?id=com.heinrichreimersoftware.iloveyou&hl=en&gl=US"><img src="https://i.postimg.cc/MGh9fMGz/pngegg.png" alt="App store" /></a>
-        </div>
-      </div>
-      <div class="footer-col-2">
-        <img src="https://i.postimg.cc/W1M2Dr87/1686734383073.png" />
-        <p>STAY SHINING</p>
-      </div>
-      <div class="footer-col-4">
-        <h3>Follow us</h3>
-        <ul>
-          <li><a href="https://github.com">Github</a></li>
-          <li><a href="https://www.instagram.com">Instagram</a></li>
-        </ul>
+        <div class="row" id="productRow"></div>
       </div>
     </div>
   </div>
-  <hr />
-  <p class="copyright">
-    &copy; 2023 Liyabona Mxhalisa. All rights reserved. partnership with LifeChoiceAcademy
-  </p>
-</div>
 
-    <script src="/script/products.js"></script>
-    <script src="/script/togglemenu.js"></script>
-    
-    </script>
-  </body>
+  <!--FOOTER-->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and iOS mobile phones.</p>
+          <div class="app-logo">
+            <a href="https://play.google.com/store/apps/details?id=com.heinrichreimersoftware.iloveyou&hl=en&gl=US"><img
+                src="https://i.postimg.cc/MGh9fMGz/pngegg.png" alt="App store" /></a>
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="https://i.postimg.cc/W1M2Dr87/1686734383073.png" />
+          <p>STAY SHINING</p>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow us</h3>
+          <ul>
+            <li><a href="https://github.com">Github</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="copyright">
+      &copy; 2023 Liyabona Mxhalisa. All rights reserved. partnership with LifeChoiceAcademy
+    </p>
+  </div>
+  <script src="/script/lazysizes.min.js"></script>
+  <script src="/script/products.js"></script>
+  <script src="/script/togglemenu.js"></script>
+
+  </script>
+</body>
+
 </html>
