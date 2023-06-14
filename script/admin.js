@@ -1,27 +1,20 @@
+// Get elements from the HTML
 const productList = document.getElementById('productList');
 const addProductBtn = document.getElementById('addProductBtn');
 const saveProductBtn = document.getElementById('saveProductBtn');
 const sortByNameBtn = document.getElementById('sortByNameBtn');
 const sortByPriceBtn = document.getElementById('sortByPriceBtn');
 
+// Array to store products
 let products = [];
 
-addProductBtn.addEventListener('click', () => {
-  clearProductForm();
-});
+// Event listeners for buttons
+addProductBtn.addEventListener('click', clearProductForm);
+saveProductBtn.addEventListener('click', saveProduct);
+sortByNameBtn.addEventListener('click', sortProductsByName);
+sortByPriceBtn.addEventListener('click', sortProductsByPrice);
 
-saveProductBtn.addEventListener('click', () => {
-  saveProduct();
-});
-
-sortByNameBtn.addEventListener('click', () => {
-  sortProductsByName();
-});
-
-sortByPriceBtn.addEventListener('click', () => {
-  sortProductsByPrice();
-});
-
+// Clear the product form inputs
 function clearProductForm() {
   document.getElementById('productName').value = '';
   document.getElementById('productDesc').value = '';
@@ -29,6 +22,7 @@ function clearProductForm() {
   document.getElementById('productImageUrl').value = '';
 }
 
+// Save a new product
 function saveProduct() {
   const productName = document.getElementById('productName').value;
   const productDesc = document.getElementById('productDesc').value;
@@ -49,12 +43,14 @@ function saveProduct() {
   $('#addProductModal').modal('hide');
 }
 
+// Delete a product
 function deleteProduct(index) {
   products.splice(index, 1);
   saveProductsToLocalStorage();
   renderProductList();
 }
 
+// Render the product list on the page
 function renderProductList() {
   productList.innerHTML = '';
 
@@ -103,20 +99,24 @@ function renderProductList() {
   }
 }
 
+// Sort products by name
 function sortProductsByName() {
   products.sort((a, b) => a.name.localeCompare(b.name));
   renderProductList();
 }
 
+// Sort products by price
 function sortProductsByPrice() {
   products.sort((a, b) => a.price - b.price);
   renderProductList();
 }
 
+// Save products to local storage
 function saveProductsToLocalStorage() {
   localStorage.setItem('products', JSON.stringify(products));
 }
 
+// Load products from local storage
 function loadProductsFromLocalStorage() {
   const storedProducts = localStorage.getItem('products');
   if (storedProducts) {
@@ -124,3 +124,6 @@ function loadProductsFromLocalStorage() {
     renderProductList();
   }
 }
+
+// Load products from local storage on page load
+loadProductsFromLocalStorage();
