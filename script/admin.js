@@ -79,7 +79,7 @@ function createProductCard(product, index) {
 
   const price = document.createElement('p');
   price.classList.add('card-text');
-  price.textContent = 'Price: $' + product.price.toFixed(2);
+  price.textContent = 'Price: R' + product.price.toFixed(2);
 
   const description = document.createElement('p');
   description.classList.add('card-text');
