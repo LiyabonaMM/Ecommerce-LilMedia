@@ -1,14 +1,14 @@
 // Function to remove a product from the cart
 function removeFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("sharedStorageKey")) || [];
   cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("sharedStorageKey", JSON.stringify(cart));
   displayCartItems();
 }
 
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("sharedStorageKey")) || [];
   let totalPrice = cart.reduce(function (total, product) {
     let price = parseFloat(product.price.replace("R", ""));
     return total + price * (product.quantity || 1);
@@ -16,11 +16,12 @@ function calculateTotalPrice() {
   return totalPrice.toFixed(2);
 }
 
+// Function to display cart items
 function displayCartItems() {
   let cartItemsTable = document.getElementById("cartItems");
   let totalElement = document.getElementById("total");
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("sharedStorageKey")) || [];
   let totalPrice = calculateTotalPrice();
 
   cartItemsTable.innerHTML = "";
@@ -94,11 +95,12 @@ function displayCartItems() {
 // Call the function to display cart items
 displayCartItems();
 
+// Function to process the checkout
 function checkout() {
   // Clear the cart
-  localStorage.removeItem('cart');
-  document.getElementById('cartItems').innerHTML = '';
+  localStorage.removeItem("sharedStorageKey");
+  document.getElementById("cartItems").innerHTML = "";
 
   // Display a thank you message
-  alert('Thank you for your purchase!');
+  alert("Thank you for your purchase!");
 }

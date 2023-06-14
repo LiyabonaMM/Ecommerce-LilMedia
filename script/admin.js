@@ -40,7 +40,7 @@ function saveProduct() {
   saveProductsToLocalStorage();
   renderProductList();
   clearProductForm();
-  $('#addProductModal').modal('hide');
+  hideAddProductModal();
 }
 
 // Delete a product
@@ -54,49 +54,51 @@ function deleteProduct(index) {
 function renderProductList() {
   productList.innerHTML = '';
 
-  products.sort((a, b) => a.name.localeCompare(b.name));
-
-  for (let i = 0; i < products.length; i++) {
-    const product = products[i];
-
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    const image = document.createElement('img');
-    image.classList.add('card-img-top');
-    image.src = product.imageUrl;
-    image.alt = product.name;
-
-    const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
-
-    const title = document.createElement('h5');
-    title.classList.add('card-title');
-    title.textContent = product.name;
-
-    const price = document.createElement('p');
-    price.classList.add('card-text');
-    price.textContent = 'Price: $' + product.price.toFixed(2);
-
-    const description = document.createElement('p');
-    description.classList.add('card-text');
-    description.textContent = product.description;
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('btn', 'btn-danger');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.addEventListener('click', () => deleteProduct(i));
-
-    cardBody.appendChild(title);
-    cardBody.appendChild(price);
-    cardBody.appendChild(description);
-    cardBody.appendChild(deleteBtn);
-
-    card.appendChild(image);
-    card.appendChild(cardBody);
-
+  products.forEach((product, index) => {
+    const card = createProductCard(product, index);
     productList.appendChild(card);
-  }
+  });
+}
+
+// Create a card element for a product
+function createProductCard(product, index) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const image = document.createElement('img');
+  image.classList.add('card-img-top');
+  image.src = product.imageUrl;
+  image.alt = product.name;
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+
+  const title = document.createElement('h5');
+  title.classList.add('card-title');
+  title.textContent = product.name;
+
+  const price = document.createElement('p');
+  price.classList.add('card-text');
+  price.textContent = 'Price: $' + product.price.toFixed(2);
+
+  const description = document.createElement('p');
+  description.classList.add('card-text');
+  description.textContent = product.description;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.classList.add('btn', 'btn-danger');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.addEventListener('click', () => deleteProduct(index));
+
+  cardBody.appendChild(title);
+  cardBody.appendChild(price);
+  cardBody.appendChild(description);
+  cardBody.appendChild(deleteBtn);
+
+  card.appendChild(image);
+  card.appendChild(cardBody);
+
+  return card;
 }
 
 // Sort products by name
@@ -123,6 +125,14 @@ function loadProductsFromLocalStorage() {
     products = JSON.parse(storedProducts);
     renderProductList();
   }
+}
+
+// Hide the add product modal
+function hideAddProductModal() {
+  const modal = document.getElementById('addProductModal');
+  const backdrop = document.getElementById('modalBackdrop');
+  modal.classList.remove('show');
+  backdrop.classList.remove('show');
 }
 
 // Load products from local storage on page load
