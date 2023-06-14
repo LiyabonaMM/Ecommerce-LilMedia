@@ -84,23 +84,42 @@ function addProductsToRow() {
 // Function to add a product to the cart
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  
     // Check if the product already exists in the cart
     let existingProduct = cart.find((item) => item.name === product.name);
-
+  
     if (existingProduct) {
-        // Increase the quantity and update the total price
-        existingProduct.quantity++;
-        existingProduct.totalPrice = existingProduct.price * existingProduct.quantity;
+      // Increase the quantity and update the total price
+      existingProduct.quantity++;
+      existingProduct.totalPrice = existingProduct.price * existingProduct.quantity;
     } else {
-        // Add the product to the cart
-        product.quantity = 1;
-        product.totalPrice = product.price;
-        cart.push(product);
+      // Add the product to the cart
+      product.quantity = 1;
+      product.totalPrice = product.price;
+      cart.push(product);
     }
+  
+    localStorage.setItem("cart", JSON.stringify(cart)); // Save the cart in local storage
+  
+    // Update the cart notification count
+    updateCartNotification(cart.length);
+  }
+  
+// Call the function to add products
+addProductsToRow();
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+// Function to update the cart notification count
+function updateCartNotification(count) {
+    const cartNotification = document.getElementById("cartNotification");
+    cartNotification.innerText = count;
+    cartNotification.style.display = count > 0 ? "block" : "none";
 }
+
+// Example code to update the cart notification count
+// This code should be placed where you handle the addition of products to the cart
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+updateCartNotification(cart.length);
+
 
 // Function to sort products based on the selected option
 function sortProducts() {
